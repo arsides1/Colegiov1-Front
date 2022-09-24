@@ -1,0 +1,50 @@
+<mat-card>Ingrese los datos del Periodo</mat-card>
+
+<form class="example-container" [formGroup]="form" (ngSubmit)="operar()" #frmPeriodo="ngForm">
+
+    <div [hidden]="true">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="ID" required formControlName="id">
+      </mat-form-field>
+    </div>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Descripcion" required formControlName="descripcion">
+    </mat-form-field>
+
+    <mat-form-field  class="example-full-width">
+
+      <input matInput [matDatepicker]="picker" formControlName="fechaInicio"
+       placeholder="Seleccione Fecha Inicial"  [min]="minFecha" >
+
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field  >
+
+      <input matInput [matDatepicker]="picker2" formControlName="fechaFin"
+       placeholder="Seleccione Fecha Final"     [min]="minFecha" >
+
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Estado</mat-label>
+    <select matNativeControl required  formControlName="estado" ng-model="proposal.formalStoryboard">
+        <option value="true">Activo </option>
+        <option value="false">Inactivo</option>
+  </select>
+    </mat-form-field>
+
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="frmPeriodo.invalid">
+      <mat-icon>done</mat-icon>
+      <span>Aceptar</span>
+    </button>
+    <button mat-raised-button color="accent" routerLink='/periodo' type="button">
+      <mat-icon>close</mat-icon>
+      <span>Cancelar</span>
+    </button>
+  </form>

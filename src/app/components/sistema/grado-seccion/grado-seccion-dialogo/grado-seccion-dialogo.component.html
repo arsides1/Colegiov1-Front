@@ -1,0 +1,17 @@
+<div>
+  <mat-form-field >
+      <input matInput placeholder="Nombre Grado" [(ngModel)]="gradoSeccion.descripcionGrado">
+  </mat-form-field>
+  <mat-form-field>
+      <input matInput placeholder="Nombre Seccion" [(ngModel)]="gradoSeccion.descripcionSeccion">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Estado</mat-label>
+    <select matNativeControl required  formControlName="estado"  [(ngModel)]="gradoSeccion.estado">
+        <option value="true">Activo </option>
+        <option value="false">Inactivo</option>
+  </select>
+  </mat-form-field>
+</div>
+<button mat-raised-button color="primary" (click)="operar()">Aceptar</button>
+<button mat-raised-button color="accent" (click)="cancelar()">Cancelar</button>

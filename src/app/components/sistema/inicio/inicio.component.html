@@ -1,0 +1,159 @@
+<p>inicio works!</p>
+<div class="example-container">
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+      <mat-icon *ngIf="sidenav.opened">close</mat-icon>
+    </button>
+
+    <h1 class="example-app-name">SISTEMA WEB SAN AGUSTIN</h1>
+
+    <span class="example-spacer"></span>
+
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/perfil">
+        <mat-icon>account_box</mat-icon>
+        <span>Mi Perfil</span>
+      </button>
+      <button mat-menu-item (click)="sidenav.opened = false">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Cerrar Sesión</span>
+      </button>
+    </mat-menu>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container">
+    <mat-sidenav #sidenav style="width: 200px">
+      <img src="assets/Agustin.jpg" width="128" style="margin-left: 20px" />
+
+      <button mat-button [matMenuTriggerFor]="configuracion">
+        <mat-icon>settings</mat-icon>
+        Configuracion
+      </button>
+      <mat-menu #configuracion="matMenu">
+        <button mat-menu-item (click)="sidenav.toggle()" routerLink="/periodo" style="cursor: pointer">
+          <mat-icon>star</mat-icon>
+          <span>Crear Periodo Academico</span>
+        </button>
+        <button mat-menu-item (click)="sidenav.toggle()" routerLink="/nivel-academico" style="cursor: pointer">
+          <mat-icon>star</mat-icon>
+          <span>Crear Nivel Academico</span>
+        </button>
+        <button mat-menu-item (click)="sidenav.toggle()" routerLink="grado-seccion" style="cursor: pointer">
+          <mat-icon>star</mat-icon>
+          <span> Crear Grados y Secciones</span>
+        </button>
+        <button mat-menu-item (click)="sidenav.toggle()" routerLink="/periodo" style="cursor: pointer">
+          <mat-icon>star</mat-icon>
+          <span> Crear Grados por Nive</span>
+        </button>
+        <button mat-menu-item (click)="sidenav.toggle()" routerLink="/periodo" style="cursor: pointer">
+          <mat-icon>star</mat-icon>
+          <span> Crear Cursos por Nivel</span>
+        </button>
+        <button mat-menu-item (click)="sidenav.toggle()" routerLink="/periodo" style="cursor: pointer">
+          <mat-icon>star</mat-icon>
+          <span> Asignar Vacantes</span>
+        </button>
+        <button mat-menu-item (click)="sidenav.toggle()" routerLink="/periodo" style="cursor: pointer">
+          <mat-icon>star</mat-icon>
+          <span> Crear Horario</span>
+        </button>
+        <button mat-menu-item (click)="sidenav.toggle()" routerLink="/periodo" style="cursor: pointer">
+          <mat-icon>star</mat-icon>
+          <span> Asignar Docentes por Cursos</span>
+        </button>
+
+      </mat-menu>
+
+      <button mat-button [matMenuTriggerFor]="usuario">
+        <mat-icon>supervisor_account</mat-icon>
+        Usuarios
+      </button>
+      <mat-menu #usuario="matMenu">
+        <button mat-menu-item (click)="sidenav.toggle()" routerLink="/periodo" style="cursor: pointer">
+          <mat-icon>accessibility_new</mat-icon>
+          <span>Crear Usuario</span>
+        </button>
+        <button mat-menu-item (click)="sidenav.toggle()" routerLink="/periodo" style="cursor: pointer">
+          <mat-icon>accessibility_new</mat-icon>
+          <span>Crear Rol</span>
+        </button>
+        <button mat-menu-item (click)="sidenav.toggle()" routerLink="/periodo" style="cursor: pointer">
+          <mat-icon>accessibility</mat-icon>
+          <span>Asignar Rol Permisos</span>
+        </button>
+      </mat-menu>
+
+      <button mat-button [matMenuTriggerFor]="alumno">
+        <mat-icon>person</mat-icon>
+        Alumnos
+      </button>
+      <mat-menu #alumno="matMenu">
+        <button mat-menu-item (click)="sidenav.toggle()" routerLink="/periodo" style="cursor: pointer">
+          <mat-icon>add</mat-icon>
+          <span>Crear Alumno</span>
+        </button>
+        <button mat-menu-item (click)="sidenav.toggle()" routerLink="/periodo" style="cursor: pointer">
+          <mat-icon>assessment</mat-icon>
+          <span>Consulta y Reporte</span>
+        </button>
+      </mat-menu>
+
+      <button mat-button [matMenuTriggerFor]="profesor">
+        <mat-icon>person_outline</mat-icon>
+        Docentes
+      </button>
+      <mat-menu #profesor="matMenu">
+        <button mat-menu-item (click)="sidenav.toggle()" routerLink="/periodo" style="cursor: pointer">
+          <mat-icon>add</mat-icon>
+          <span>Crear Docente</span>
+        </button>
+        <button mat-menu-item (click)="sidenav.toggle()" routerLink="/periodo" style="cursor: pointer">
+          <mat-icon>assignment</mat-icon>
+          <span>Crear Curricula</span>
+        </button>
+        <button mat-menu-item (click)="sidenav.toggle()" routerLink="/periodo" style="cursor: pointer">
+          <mat-icon>assignment</mat-icon>
+          <span>Agregar Calificacion</span>
+        </button>
+      </mat-menu>
+
+      <button mat-button [matMenuTriggerFor]="curso">
+        <mat-icon>library_books</mat-icon>
+        Cursos
+      </button>
+      <mat-menu #curso="matMenu">
+        <button mat-menu-item (click)="sidenav.toggle()" routerLink="/periodo" style="cursor: pointer">
+          <mat-icon>add</mat-icon>
+          <span>Crear Curso</span>
+        </button>
+      </mat-menu>
+
+      <button mat-button [matMenuTriggerFor]="matricula">
+        <mat-icon>local_library</mat-icon>
+        Matricula
+      </button>
+      <mat-menu #matricula="matMenu">
+        <button mat-menu-item (click)="sidenav.toggle()" routerLink="/periodo" style="cursor: pointer">
+          <mat-icon>add</mat-icon>
+          <span>Crear Matricula</span>
+        </button>
+        <button mat-menu-item (click)="sidenav.toggle()" routerLink="/periodo" style="cursor: pointer">
+          <mat-icon>assessment</mat-icon>
+          <span>Consulta y Reporte</span>
+        </button>
+      </mat-menu>
+
+
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

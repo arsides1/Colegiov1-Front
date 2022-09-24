@@ -1,0 +1,19 @@
+<div>
+  <mat-form-field >
+      <input matInput placeholder="Nombre Periodo" [(ngModel)]="nivel.idPeriodo.descripcion">
+  </mat-form-field>
+  <mat-form-field>
+      <input matInput placeholder="Nombre Nivel" [(ngModel)]="nivel.descripcionNivel">
+  </mat-form-field>
+  <mat-form-field>
+      <input matInput placeholder="Turno" [(ngModel)]="nivel.descpricionTurno" >
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Hora Inicio Clases" [(ngModel)]="nivel.horaInicio" >
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Hora Fin Clases" [(ngModel)]="nivel.horaFin" >
+</mat-form-field>
+</div>
+<button mat-raised-button color="primary" (click)="operar()">Aceptar</button>
+<button mat-raised-button color="accent" (click)="cancelar()">Cancelar</button>
